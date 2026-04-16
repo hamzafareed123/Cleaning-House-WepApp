@@ -1,5 +1,6 @@
 import { CalendarCheck2, Leaf, Search, Sparkles } from 'lucide-react'
-import basketImage from '../../assets/basket.png'
+import basketImage from '../../../assets/basket.png'
+import './HowItWorksSection.css'
 
 const steps = [
   {

@@ -1,8 +1,9 @@
-import { stats } from '../../data/content'
-import womencleaning from '../../assets/womencleaning.png'
-import menscleaning from '../../assets/menscleaning.png'
-import circleImage from '../../assets/circle.png'
+import { stats } from '../../../data/content'
+import womencleaning from '../../../assets/womencleaning.png'
+import menscleaning from '../../../assets/menscleaning.png'
+import circleImage from '../../../assets/circle.png'
 import { Leaf, ShieldCheck, Star } from 'lucide-react'
+import './WhyChooseUsSection.css'
 
 export function WhyChooseUsSection() {
   return (
@@ -39,7 +40,7 @@ export function WhyChooseUsSection() {
 
       <div className="stats-strip">
         <div className="stats-note">We speak with our powerful statistics</div>
-        {stats.map((item) => (
+        {stats.map((item: any) => (
           <div key={item.label} className="stats-item">
             <h3>{item.value}</h3>
             <p><Star size={13} /> {item.label}</p>

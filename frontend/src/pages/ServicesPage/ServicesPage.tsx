@@ -2,9 +2,11 @@ import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { useDispatch, useSelector } from 'react-redux'
 import { useQuery } from '@tanstack/react-query'
-import { faqs, services } from '../data/content'
-import type { RootState } from '../app/store'
-import { setActiveServiceFilter } from '../app/store'
+import { faqs, services } from '../../data/content'
+import type { RootState } from '../../app/store'
+import { setActiveServiceFilter } from '../../app/store'
+import './ServicesPage.css'
+
 
 async function getServices() {
   return Promise.resolve(services)
@@ -17,7 +19,7 @@ export function ServicesPage() {
   const activeFilter = useSelector((state: RootState) => state.ui.activeServiceFilter)
   const { data = [] } = useQuery({ queryKey: ['services'], queryFn: getServices })
 
-  const visible = activeFilter === 'all' ? data : data.filter((s) => s.category === activeFilter)
+  const visible = activeFilter === 'all' ? data : data.filter((s: any) => s.category === activeFilter)
 
   return (
     <div className="container section">
@@ -35,7 +37,7 @@ export function ServicesPage() {
         ))}
       </div>
       <div className="service-grid">
-        {visible.map((item) => (
+        {visible.map((item: any) => (
           <article key={item.title} className="service-card">
             <img src={item.image} alt={item.title} />
             <h3>{item.title}</h3>
@@ -46,7 +48,7 @@ export function ServicesPage() {
 
       <section className="faq-wrap">
         <h2>Frequently Asked Questions</h2>
-        {faqs.map((question) => (
+        {faqs.map((question: any) => (
           <Accordion key={question}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>{question}</AccordionSummary>
             <AccordionDetails>

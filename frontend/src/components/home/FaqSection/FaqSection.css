@@ -1,0 +1,246 @@
+.faq-section-wrapper {
+  background: #3f704d; /* Matches the site's primary theme */
+  border-radius: 64px;
+  position: relative;
+  margin-top: 4rem;
+  margin-bottom: 6rem;
+  padding: 4rem 3rem 6rem;
+}
+
+.faq-title {
+  text-align: center;
+  color: #fff;
+  font-size: clamp(2.3rem, 3.8vw, 3.4rem);
+  font-weight: 600;
+  margin: 0 0 3.5rem;
+}
+
+.faq-title .text-coral {
+  color: #ff5e3a;
+  font-style: italic;
+  font-family: serif;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; /* 55/45 split */
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Custom Accordions */
+.faq-accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.faq-accordion-item {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.faq-accordion-item.open {
+  border-left: 4px solid #ff5e3a; /* Subtle highlight */
+}
+
+.faq-accordion-header {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  padding: 1.3rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: #222;
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.faq-accordion-header span {
+  max-width: 90%;
+}
+
+.faq-accordion-header svg {
+  color: #888;
+  transition: color 0.2s;
+}
+
+.faq-accordion-header:hover svg {
+  color: #222;
+}
+
+.faq-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.faq-accordion-body {
+  padding: 0 1.5rem 1.4rem;
+  color: #4f4f4f;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* Right Media Column */
+.faq-media-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.faq-cleaners-img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.faq-contact-card {
+  background: #fff;
+  border-radius: 36px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.faq-contact-card h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.25rem;
+  color: #222;
+}
+
+.faq-contact-card p {
+  margin: 0 auto 1.5rem;
+  font-size: 0.85rem;
+  color: #555;
+  max-width: 320px;
+  line-height: 1.5;
+}
+
+.faq-contact-btn {
+  background: #ff8c6b;
+  color: #fff;
+  border: 0;
+  padding: 1rem 2.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 140, 107, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.faq-contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(255, 140, 107, 0.5);
+}
+
+/* Newsletter Overlay */
+.newsletter-wrapper {
+  position: absolute;
+  bottom: -46px; /* Dynamically overlaps the bottom edge */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.newsletter-card {
+  background: #fff;
+  border-radius: 999px;
+  padding: 1rem 1rem 1rem 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  width: min(1000px, 92%);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+}
+
+.newsletter-copy h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.65rem;
+  color: #222;
+}
+
+.newsletter-copy p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #8f8f8f;
+}
+
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  background: #fcfcfc;
+  border: 1px solid #eaeaea;
+  border-radius: 999px;
+  padding: 0.4rem;
+  flex: 1;
+  max-width: 480px;
+}
+
+.newsletter-form input {
+  border: 0;
+  background: transparent;
+  flex: 1;
+  padding: 0 1.25rem;
+  font-size: 0.95rem;
+  outline: none;
+  color: #333;
+}
+
+.newsletter-form button {
+  background: #050505;
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: 1rem 2.2rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.newsletter-form button:hover {
+  background: #333;
+}
+
+@media (max-width: 1024px) {
+  .faq-section-wrapper {
+    padding: 3rem 2rem 5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  .newsletter-card {
+    flex-direction: column;
+    border-radius: 36px;
+    padding: 2.5rem 2rem;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  .newsletter-form {
+    width: 100%;
+    max-width: 100%;
+  }
+  .newsletter-wrapper {
+    bottom: -110px;
+  }
+  .faq-section-wrapper {
+    padding-bottom: 9rem;
+    margin-bottom: 9rem;
+  }
+}

@@ -1,0 +1,253 @@
+.hero {
+  margin-top: 0.75rem;
+  border-radius: 28px;
+  padding: 1.85rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  min-height: 620px;
+  align-items: start;
+  position: relative;
+  overflow: visible;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-card {
+  background: #efefeb;
+  border-radius: 34px;
+  padding: 2.1rem 1.9rem;
+  border: 0;
+  max-width: 730px;
+  width: 730px;
+  min-height: 360px;
+  margin-top: 2.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.tag, .eyebrow {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.hero-card h1 {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  font-size: 3.05rem;
+  line-height: 1.14;
+  max-width: 620px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.hero-card h1 span {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.hero-card p {
+  font-size: 1.8rem;
+  max-width: 570px;
+  margin-top: 0;
+  margin-bottom: 0.15rem;
+  line-height: 1.2;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.25rem;
+}
+
+.hero-actions button {
+  min-width: 170px;
+  height: 50px;
+  border-radius: 999px;
+  border: 0;
+  background: linear-gradient(180deg, rgba(236, 212, 141, 0.78), rgba(214, 179, 86, 0.78));
+  font-size: 1rem;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 8px 18px rgba(102, 80, 23, 0.26);
+  font-weight: 600;
+}
+
+.hero-features {
+  margin-top: 0.65rem;
+  display: flex;
+  gap: 2.1rem;
+}
+
+.hero-features p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.hero-features i {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  display: grid;
+  place-items: center;
+  color: #dbeccf;
+}
+
+.hero-image {
+  min-height: 500px;
+}
+
+.review-badge {
+  position: absolute;
+  right: 14px;
+  bottom: -34px;
+  width: 230px;
+  min-height: 104px;
+  background: linear-gradient(180deg, rgba(247, 251, 248, 0.92) 0%, rgba(237, 245, 240, 0.88) 100%);
+  border-radius: 22px;
+  padding: 0.62rem 0.86rem 0.58rem;
+  box-shadow: 0 8px 18px rgba(18, 53, 37, 0.22), inset 0 8px 16px rgba(76, 151, 107, 0.2);
+  border: 1px solid rgba(210, 228, 214, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 8;
+}
+
+.review-badge p {
+  margin: 0;
+  font-size: 0.6rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.005em;
+}
+
+.review-badge .google {
+  color: #de9400;
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.google-logo {
+  width: 22px;
+  height: 22px;
+  display: block;
+  margin: 0 auto 0.16rem;
+  object-fit: contain;
+}
+
+.review-badge .stars {
+  color: #f4b400;
+  display: flex;
+  gap: 1px;
+  justify-content: center;
+  margin-bottom: 0.12rem;
+}
+
+.review-avatars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.34rem;
+}
+
+.review-avatars span {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #6f4f8f;
+  color: #fff;
+  font-size: 0.5rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid #fff;
+  margin-left: -5px;
+}
+
+.review-avatars span:first-child {
+  margin-left: 0;
+  background: #ce8e66;
+}
+
+.review-avatars .count {
+  width: auto;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--primary-color);
+  font-size: 0.45rem;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: 520px;
+    padding: 1rem;
+  }
+  .hero-card h1 {
+    font-size: 1.9rem;
+  }
+  .hero-card p {
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+  .hero-features {
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+  }
+  .hero-features p {
+    font-size: 0.95rem;
+  }
+  .hero-actions button {
+    min-width: 120px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+  .hero-card {
+    margin-top: 0.8rem;
+    padding: 1.1rem;
+    border-radius: 20px;
+  }
+  .review-badge {
+    right: 10px;
+    bottom: -20px;
+    width: 212px;
+    min-height: 98px;
+    padding: 0.5rem 0.72rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 430px;
+    border-radius: 18px;
+  }
+  .hero-card h1 {
+    font-size: 1.55rem;
+  }
+  .hero-card p {
+    font-size: 0.96rem;
+    margin: 0.55rem 0 0.8rem;
+  }
+  .hero-features p {
+    font-size: 0.82rem;
+  }
+  .hero-features i {
+    width: 16px;
+    height: 16px;
+  }
+  .review-badge {
+    position: absolute;
+    right: 8px;
+    bottom: -16px;
+    width: 190px;
+    min-height: 88px;
+  }
+}

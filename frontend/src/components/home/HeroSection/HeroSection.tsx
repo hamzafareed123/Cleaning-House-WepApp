@@ -1,6 +1,7 @@
 import { Check, Star } from 'lucide-react'
-import googleIcon from '../../assets/google.png'
-import heroImage from '../../assets/hero.png'
+import './HeroSection.css'
+import googleIcon from '../../../assets/google.png'
+import heroImage from '../../../assets/hero.png'
 
 export function HeroSection() {
   return (

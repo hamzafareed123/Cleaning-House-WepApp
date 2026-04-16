@@ -1,0 +1,33 @@
+.filter-row {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.filter-row button {
+  border-radius: 999px;
+  border: 1px solid #d0d0d0;
+  background: #fff;
+  padding: 0.4rem 0.8rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-row button:hover {
+  background: #f0f0f0;
+}
+
+.filter-row .active {
+  background: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+}
+
+.filter-row .active:hover {
+  background: #2a4d33;
+}
+
+.faq-wrap {
+  margin-top: 2rem;
+}

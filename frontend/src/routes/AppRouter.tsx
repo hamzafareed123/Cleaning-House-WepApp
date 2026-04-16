@@ -1,8 +1,8 @@
 import { Navigate, createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { MainLayout } from '../layout/MainLayout'
-import { HomePage } from '../pages/HomePage'
-import { AboutPage } from '../pages/AboutPage'
-import { ServicesPage } from '../pages/ServicesPage'
+import { MainLayout } from '../components/layout/MainLayout'
+import { HomePage } from '../pages/HomePage/HomePage'
+import { AboutPage } from '../pages/AboutPage/AboutPage'
+import { ServicesPage } from '../pages/ServicesPage/ServicesPage'
 
 const router = createBrowserRouter([
   {

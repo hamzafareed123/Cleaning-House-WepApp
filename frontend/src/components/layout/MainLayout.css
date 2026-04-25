@@ -13,7 +13,26 @@
   z-index: 50;
   display: flex;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(0);
+  will-change: transform, top;
+}
+
+/* Collapsed Header State */
+.site-header.collapsed {
+  top: 2rem;
+}
+
+.site-header.collapsed .header-glass {
+  min-height: 44px;
+  padding: 0 1.5rem;
+  width: min(800px, 85%);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: padding, width, min-height;
 }
 
 .header-glass {
@@ -52,6 +71,29 @@
   place-items: center;
   background: #f1edda;
   font-size: 1.1rem;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
+}
+
+.site-header.collapsed .brand-mark {
+  opacity: 0;
+  transform: scale(0) rotate(180deg);
+  pointer-events: none;
+  transition-delay: 0.1s;
+}
+
+.brand-copy {
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 1;
+  transform: translateX(0);
+  will-change: opacity, transform;
+}
+
+.brand-copy.collapsed {
+  opacity: 0;
+  transform: translateX(-30px);
+  pointer-events: none;
+  transition-delay: 0.05s;
 }
 
 .brand-copy span {
@@ -61,6 +103,7 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .brand {
@@ -68,6 +111,11 @@
   font-size: 1.05rem;
   font-weight: 800;
   color: #222;
+  transition: all 0.3s ease;
+}
+
+.brand-copy.collapsed .brand {
+  font-size: 0;
 }
 
 /* Desktop Navigation */
@@ -110,6 +158,17 @@
   display: flex;
   align-items: center;
   gap: 1.2rem;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 1;
+  transform: translateX(0);
+  will-change: opacity, transform;
+}
+
+.header-contact.collapsed {
+  opacity: 0;
+  transform: translateX(40px);
+  pointer-events: none;
+  transition-delay: 0.15s;
 }
 
 .phone-link {
@@ -274,6 +333,28 @@
     flex-direction: column;
     gap: 0.8rem;
     text-align: center;
+  }
+  
+  /* Mobile collapsible header behavior */
+  .site-header.collapsed {
+    transform: translateY(0);
+    top: 1.5rem;
+  }
+  
+  .site-header.collapsed .header-glass {
+    min-height: 40px;
+    padding: 0 1.2rem;
+    width: min(600px, 90%);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+  
+  .site-header.collapsed .brand-mark {
+    opacity: 0;
+    transform: scale(0);
+    pointer-events: none;
   }
 }
 

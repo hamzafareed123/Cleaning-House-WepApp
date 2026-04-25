@@ -4,7 +4,7 @@ import { faqs } from '../../../data/content'
 import faqCleaners from '../../../assets/faq_cleaners.png'
 import './FaqSection.css'
 
-export function FaqSection() {
+export function FaqSection({ hideNewsletter = false }: { hideNewsletter?: boolean }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   const toggleFaq = (index: number) => {
@@ -58,18 +58,20 @@ export function FaqSection() {
         </div>
 
         {/* Floating Absolute Overlay */}
-        <div className="newsletter-wrapper">
-          <div className="newsletter-card">
-            <div className="newsletter-copy">
-              <h3>Subscribe Newsletter</h3>
-              <p>Financial transactions remotely using a mobile</p>
-            </div>
-            <div className="newsletter-form">
-              <input type="email" placeholder="Enter your email." />
-              <button>GET START</button>
+        {!hideNewsletter && (
+          <div className="newsletter-wrapper">
+            <div className="newsletter-card">
+              <div className="newsletter-copy">
+                <h3>Subscribe Newsletter</h3>
+                <p>Financial transactions remotely using a mobile</p>
+              </div>
+              <div className="newsletter-form">
+                <input type="email" placeholder="Enter your email." />
+                <button>GET START</button>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </section>
     </div>
   )

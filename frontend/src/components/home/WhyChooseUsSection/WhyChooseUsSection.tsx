@@ -40,7 +40,7 @@ export function WhyChooseUsSection() {
 
       <div className="stats-strip">
         <div className="stats-note">We speak with our powerful statistics</div>
-        {stats.map((item: any) => (
+        {stats.map((item: { label: string; value: string | number }) => (
           <div key={item.label} className="stats-item">
             <h3>{item.value}</h3>
             <p><Star size={13} /> {item.label}</p>

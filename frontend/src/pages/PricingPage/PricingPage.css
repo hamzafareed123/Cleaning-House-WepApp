@@ -1,0 +1,417 @@
+.pricing-page {
+  padding-bottom: 4rem;
+  background-color: #fcfcfb;
+}
+
+/* Header */
+.pricing-header {
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+}
+
+.pricing-subtitle {
+  color: var(--primary-color, #3f704d);
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.leaf-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.pricing-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 1rem;
+  line-height: 1.1;
+}
+
+.pricing-desc {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  color: #666;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Toggle */
+.pricing-toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.toggle-label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #888;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toggle-label.active {
+  color: #111;
+}
+
+.save-badge {
+  background-color: #e5f1ea;
+  color: #3f704d;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-weight: 800;
+}
+
+.pricing-toggle {
+  width: 64px;
+  height: 32px;
+  background-color: #e0e0e0;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s;
+  padding: 0;
+}
+
+.pricing-toggle.yearly {
+  background-color: #3f704d;
+}
+
+.toggle-circle {
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.pricing-toggle.yearly .toggle-circle {
+  transform: translateX(32px);
+}
+
+/* Pricing Grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center; /* helps center the different heights */
+}
+
+@media(min-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pricing-card {
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s;
+  position: relative;
+}
+
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.pricing-card:hover::before {
+  opacity: 1;
+}
+
+.pricing-card.starter::before {
+  background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(0, 0, 0, 0.04), transparent 40%);
+}
+
+.pricing-card.popular::before {
+  background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 255, 255, 0.5), transparent 40%);
+}
+
+.pricing-card.enterprise::before {
+  background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 255, 255, 0.15), transparent 40%);
+}
+
+.pricing-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 60px rgba(63,112,77, 0.15) !important;
+}
+
+.card-top {
+  padding: 2.5rem 2rem 2rem;
+}
+
+.card-top h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem;
+}
+
+.tier-desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  min-height: 40px;
+}
+
+.price-block {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+
+.price-block .currency {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.price-block .amount {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1;
+  display: inline-block;
+  min-width: 90px;
+}
+
+.price-block .cycle {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.card-bottom {
+  padding: 0 2rem 2.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 30px;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.pricing-btn.outline {
+  background: transparent;
+  border: 2px solid #ccc;
+  color: #333;
+}
+
+.pricing-btn.outline:hover {
+  border-color: #3f704d;
+  color: #3f704d;
+}
+
+.pricing-btn.solid {
+  background: #3f704d;
+  color: white;
+  border: 2px solid #3f704d;
+}
+
+.pricing-btn.solid:hover {
+  background: #2d5238;
+  border-color: #2d5238;
+}
+
+.pricing-btn.outline.white {
+  border-color: rgba(255,255,255,0.3);
+  color: white;
+}
+.pricing-btn.outline.white:hover {
+  background: white;
+  color: #48724f;
+}
+
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.4;
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.3s;
+  cursor: default;
+}
+
+.feature-list li:hover {
+  transform: translateX(6px);
+  color: #3f704d;
+}
+
+.check-icon {
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.feature-list li:hover .check-icon {
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* Specific Tiers */
+.pricing-card.starter {
+  background-color: white;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+}
+
+.pricing-card.starter .tier-desc { color: #666; }
+.pricing-card.starter .feature-list li { color: #333; }
+.pricing-card.starter .check-icon { color: #8cb18b; }
+
+.pricing-card.popular {
+  background-color: #f7f6f1;
+  border: 4px solid #efcf7b;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  transform: scale(1);
+  z-index: 2;
+}
+
+@media(min-width: 768px) {
+  .pricing-card.popular {
+    transform: scale(1.05); /* Elevate the popular card */
+  }
+  .pricing-card.popular:hover {
+    transform: scale(1.05) translateY(-10px);
+  }
+}
+
+@keyframes ribbon-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(239, 207, 123, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(239, 207, 123, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 207, 123, 0); }
+}
+
+.popular-ribbon {
+  background-color: #efcf7b;
+  color: #111;
+  text-align: center;
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.5rem 0;
+  animation: ribbon-pulse 2s infinite;
+}
+
+.pricing-card.popular .tier-desc { color: #555; }
+.pricing-card.popular .card-top h3 { color: #3f704d; }
+.pricing-card.popular .check-icon { color: #3f704d; }
+
+
+.pricing-card.enterprise {
+  background-color: #48724f;
+  color: white;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+}
+
+.pricing-card.enterprise .tier-desc { color: rgba(255,255,255,0.8); }
+.pricing-card.enterprise .feature-list li { color: white; }
+.pricing-card.enterprise .check-icon { color: #d1e2d5; }
+
+
+/* Trust Section */
+.trust-section {
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  text-align: center;
+}
+
+@media(min-width: 600px) {
+  .trust-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.trust-item {
+  background: white;
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  border: 1px solid #f2f2ef;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.trust-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+.trust-icon-box {
+  width: 70px;
+  height: 70px;
+  background-color: #f6f8f1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.trust-item:hover .trust-icon-box {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.trust-item h4 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.trust-item p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}

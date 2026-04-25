@@ -9,7 +9,7 @@ import { Footer } from './Footer/Footer'
 const topNavItems = [
   { label: 'About', to: '/about', external: false },
   { label: 'Services', to: '/services', external: false },
-  { label: 'Pricing', to: '#', external: true },
+  { label: 'Pricing', to: '/pricing', external: true },
   { label: 'Gallery', to: '#', external: true },
   { label: 'Team', to: '#', external: true },
 ]

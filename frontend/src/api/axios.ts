@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { InternalAxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
 
 // Creating a baseline instance for your API connection
 export const apiClient = axios.create({
@@ -11,21 +11,21 @@ export const apiClient = axios.create({
 
 // Interceptors can be added here for token refresh, error handling etc.
 apiClient.interceptors.request.use(
-  (config: any) => {
+  (config: InternalAxiosRequestConfig) => {
     // const token = localStorage.getItem('token');
     // if (token) {
     //   config.headers.Authorization = `Bearer ${token}`;
     // }
     return config;
   },
-  (error: any) => {
+  (error: AxiosError) => {
     return Promise.reject(error);
   }
 );
 
 apiClient.interceptors.response.use(
-  (response: any) => response,
-  (error: any) => {
+  (response: AxiosResponse) => response,
+  (error: AxiosError) => {
     // Global error handling, like redirecting to login on 401
     return Promise.reject(error);
   }
